@@ -4,6 +4,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 {
     $myPerson = new Person($_POST["fName"], $_POST["lName"], $_POST["bDate"]);
     setcookie("user", serialize($myPerson), time() + 7 * 24 * 60 * 60);
+    $_COOKIE["user"] = serialize($myPerson);
 }
 
 if(isset($_COOKIE["user"])) {
