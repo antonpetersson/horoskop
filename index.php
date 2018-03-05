@@ -1,4 +1,10 @@
 <?php
+include "classes.php";
+if($_SERVER['REQUEST_METHOD'] == "POST")
+{
+    $myPerson = new Person($_POST["fName"], $_POST["lName"], $_POST["bDate"]);
+    setcookie("user", serialize($myPerson), time() + 7 * 24 * 60 * 60);
+}
 
 if(isset($_COOKIE["user"])) {
     header('Location: ./myhoroscope.php');  
@@ -16,7 +22,7 @@ if(isset($_COOKIE["user"])) {
 </head>
 <body>
 
-<form action="myhoroscope.php" method="POST">
+<form method="POST">
     Vad är ditt förnamn? <input type="text" name="fName"><br>
     Vad är ditt efternamn? <input type="text" name="lName"><br>
     Vad är ditt födelsedatum? <input type="number" name="bDate"><br>
