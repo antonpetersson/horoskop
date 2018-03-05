@@ -1,6 +1,4 @@
-<?php
-    setcookie("user", serialize($myUser), time() + 24 * 60 * 60);
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
