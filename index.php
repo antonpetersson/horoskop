@@ -30,20 +30,6 @@ if(isset($_COOKIE["user"])) {
 <input type="submit" value="Skicka">
 </form>
 
-
-<?php
-
-
-
-
-// $test = "90041700";
-// $testYear = $test[0] . $test[1];
-// echo $testYear;
-
-// $day =  substr($test, 4, 2);
-//  echo $day;
-
-?>
     
 </body>
 </html>
