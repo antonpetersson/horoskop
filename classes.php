@@ -8,7 +8,6 @@ class Person{
     }
     function printName(){
         echo $this -> fName . " " . $this -> lName;
-        
     }
 function checkHoroscope(){
     $month = substr($this -> birthdate, 2, 2);
