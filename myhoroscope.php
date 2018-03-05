@@ -1,23 +1,19 @@
 <?php
 include "classes.php";
+if(!isset($_COOKIE["user"]))
+{
+    header("Location: ./index.php");
+}
 
+$myPerson = unserialize($_COOKIE['user']);
 
-
-$myPerson = new Person($_POST["fName"], $_POST["lName"], $_POST["bDate"]);
-setcookie("user", serialize($myPerson), time() + 120);
-
-if(isset($_COOKIE["user"])) {
     
 
- } 
+    $myPerson -> printName();
+    echo "</br>";
+    $myPerson -> checkHoroscope();
 
 
 
-$myPerson -> printName();
-echo "</br>";
-$myPerson -> checkHoroscope();
-
-echo "</br>";
-echo $_COOKIE["user"];
 
 ?>
